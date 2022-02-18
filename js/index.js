@@ -1,3 +1,5 @@
+import { changeWord } from "./rotateText.js";
+
 const burger = document.querySelector('.burger');
 const container = document.querySelector('.container');
 const screens = document.querySelectorAll('.screen');
@@ -36,4 +38,8 @@ function changeBg() {
     })
 }
 
+
 changeBg();
+
+changeWord();
+setInterval(changeWord, 4000);
