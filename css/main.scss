@@ -1,41 +1,117 @@
+/*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-* {
-    padding: 0;
-    margin: 0;
+/*===== VARIABLES CSS =====*/
+:root {
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+    --first-color: #069c54;
+    // --first-color-alt: #048654;
+    // --title-color: #393939;
+    --text-color: #fff;
+    --text-color-light: #a6a6a6;
+    --body-color: #485461;
+    --container-color: #ffffff;
+    --circles-color: #ffffff33;
+    --wisteria-color: #8e44ad;
+    --belize-color: #2980b9;
+    --pomegranate-color: #c0392b;
+    --green-color: #16a085;
+    --midnight-color: #2c3e50;
+
+    /*========== Font and typography ==========*/
+    --body-font: "Poppins", sans-serif;
+
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+
+    @media screen and (min-width: 768px) {
+        --biggest-font-size: 4rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: 0.875rem;
+        --smaller-font-size: 0.813rem;
+    }
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Margenes ==========*/
+    --mb-1: 0.5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== BASE ==========*/
+*,
+::before,
+::after {
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
 }
 
-// Color for rotating text
-.wisteria {
-    color: #8e44ad;
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    // line-height: 1.6;
+    .container {
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(135deg, var(--body-color) 0%, #28313b 74%);
+        overflow: hidden;
+        transform-style: preserve-3d;
+        transition: 0.5s;
+    }
+}
+h1,
+h2,
+h3,
+ul,
+p {
+    margin: 0;
 }
 
-.belize {
-    color: #2980b9;
+ul {
+    padding: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.pomegranate {
-    color: #c0392b;
-}
-
-.green {
-    color: #16a085;
-}
-
-.midnight {
-    color: #2c3e50;
-}
-
-// Navbar
+/*========== Navbar ==========*/
 .navbar {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 10;
-    height: .3rem;
+    height: 0.3rem;
     .menu {
         max-width: 72rem;
         width: 100%;
@@ -62,22 +138,23 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            
+
             .bar {
                 width: 1.9rem;
                 height: 1.5px;
                 border-radius: 2px;
                 background-color: #eee;
-                transition: .3s;
+                transition: 0.3s;
                 position: relative;
                 animation: pulse 1.5s infinite;
-                &:after, &:before {
-                    content: '';
+                &:after,
+                &:before {
+                    content: "";
                     position: absolute;
                     width: inherit;
                     height: inherit;
                     background: #eee;
-                    transition: .5s;
+                    transition: 0.5s;
                 }
                 &:after {
                     transform: translateY(9px);
@@ -90,228 +167,253 @@
     }
 }
 
-// Page 
-.container {
-    min-height: 100vh;
-    width: 100%;
-    background-color: #485461;
-    background-image: linear-gradient(135deg, #485461 0%, #28313b 74%);
-    overflow: hidden;
-    transform-style: preserve-3d;
-    transition: .5s;
-    
-    .circles{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-
-        & li{
-            position: absolute;
-            display: block;
-            list-style: none;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            animation: animate 25s linear infinite;
-            bottom: -150px;
-            
-            &:nth-child(1){
-                left: 25%;
-                width: 80px;
-                height: 80px;
-                animation-delay: 0s;
-            }
-            &:nth-child(2){
-                left: 10%;
-                width: 20px;
-                height: 20px;
-                animation-delay: 2s;
-                animation-duration: 12s;
-            }
-            &:nth-child(3){
-                left: 70%;
-                width: 20px;
-                height: 20px;
-                animation-delay: 4s;
-            }
-            &:nth-child(4){
-                left: 40%;
-                width: 60px;
-                height: 60px;
-                animation-delay: 0s;
-                animation-duration: 18s;
-            }
-            &:nth-child(5){
-                left: 65%;
-                width: 20px;
-                height: 20px;
-                animation-delay: 0s;
-            }
-            &:nth-child(6){
-                left: 75%;
-                width: 110px;
-                height: 110px;
-                animation-delay: 3s;
-            }
-            &:nth-child(7){
-                left: 35%;
-                width: 150px;
-                height: 150px;
-                animation-delay: 7s;
-            }
-            &:nth-child(8){
-                left: 50%;
-                width: 25px;
-                height: 25px;
-                animation-delay: 15s;
-                animation-duration: 45s;
-            }
-            &:nth-child(9){
-                left: 20%;
-                width: 15px;
-                height: 15px;
-                animation-delay: 2s;
-                animation-duration: 35s;
-            }
-            &:nth-child(10){
-                left: 85%;
-                width: 150px;
-                height: 150px;
-                animation-delay: 0s;
-                animation-duration: 11s;
-            }
-        }
+/*========== Section ==========*/
+section {
+    /*========== Background sections ==========*/
+    .home-bg {
+        background: url(../img/home.jpg) no-repeat top center/cover;
+    }
+    .react-dialog-bg {
+        background: url(../img/react-dialog.jpg) no-repeat top center/cover;
+    }
+    .resume-bg {
+        background: url(../img/resume.jpg) no-repeat top center/cover;
+    }
+    .react-pizza-bg {
+        background: url(../img/react-pizza.jpg) no-repeat top center/cover;
+    }
+    .website-restaurant-bg {
+        background: url(../img/website-restaurant.png) no-repeat top center/cover;
+    }
+    .ksip-bg {
+        background: url(../img/ksip.jpg) no-repeat top center/cover;
     }
 
-    .main {
-        position: relative;
-        width: 100%;
-        left: 0;
-        z-index: 5;
-        overflow: hidden;
-        transform-origin: left;
-        transform-style: preserve-3d;
-        transition: .5s;
-
-        header {
-            min-height: 100vh;
-            width: 100%;
-            position: relative;
-
-            &.header__one {
-                background: url(../img/home.jpg) no-repeat top center/cover;
-            }
-            &.header__two {
-                background: url(../img/react-dialog.jpg) no-repeat top center/cover;
-            }
-            &.header__tree {
-                background: url(../img/resume.jpg) no-repeat top center/cover;
-            }
-            &.header__four {
-                background: url(../img/react-pizza.jpg) no-repeat top center/cover;
-            }
-            &.header__five {
-                background: url(../img/website-restaurant.png) no-repeat top center/cover;
-            }
-
-            .header {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                background-color: rgba(43, 51, 59, 0.5);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-        
-                &__item {
-                    max-width: 35rem;
-                    text-align: center;
-                    color: white;
-                    padding: 0 2rem;
-                    .title {
-                        font-size: 2.7rem;
-                    }
-                    .skills{
-                        font-size: 2rem;
-                    }
-                    .btn {
-                        margin-top: 1rem;
-                        padding: 0.6rem 1.6rem;
-                        background-color: #1179e7;
-                        border: none;
-                        border-radius: 25px;
-                        color: white;
-                        text-transform: uppercase;
-                        cursor: pointer;
-                        text-decoration: none;
-                    }
-                }
-        }
-        }
-    }
-
-    // Shadows
-    .shadow {
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        transform-style: preserve-3d;
-        transform-origin: left;
-        transition: .5s;
-        background: white;
-        &.one {
-            z-index: -1;
-            opacity: .15;
-        }
-        &.two {
-            z-index: -2;
-            opacity: .1;
-        }
-    }
-
-    // Links
-    .links {
-        position: absolute;
-        width: 30%;
-        right: 0;
-        top: 0;
-        height: 100vh;
-        z-index: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        ul {
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-            color: #eee;
-            padding: 0.07rem 0;
-            font-size: 1rem;
-            display: inline-block;
-            font-weight: 300;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: .3s;
-            opacity: 0;
-            transform: translateY(10px);
-            animation: hide .5s forwards ease;
-        }
-
+    .section__title {
+        font-size: var(--biggest-font-size);
     }
 }
 
+section:first-of-type {
+    .main {
+        .header__item {
+            display: block;
+        }
+    }
+}
 
-// Animation 
+.main {
+    position: relative;
+    width: 100%;
+    left: 0;
+    z-index: 5;
+    overflow: hidden;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    min-height: 100vh;
+
+    .header {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(43, 51, 59, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+
+        &__item {
+            display: none;
+            max-width: 35rem;
+            text-align: center;
+            padding: 0 var(--mb-4);
+            transition: 0.5s;
+
+            .skills {
+                font-size: var(--h1-font-size);
+            }
+        }
+    }
+}
+
+.react-dialog,
+.resume,
+.react-pizza,
+.website-restaurant,
+.ksip {
+    &__container {
+        max-width: 960px;
+        width: calc(100% - 2rem);
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        color: var(--text-color);
+        transition: 0.5s;
+        margin: 0 var(--mb-4);
+        z-index: var(--z-fixed);
+    }
+
+    &__stack {
+        margin-right: var(--mb-4);
+        list-style: circle;
+    }
+
+    &__data {
+        width: 300px;
+    }
+
+    &__subtitle {
+        text-align: center;
+    }
+
+    &__description {
+    }
+}
+
+/* ========== Shadows ========== */
+.shadow {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: 0.5s;
+    background: var(--text-color);
+    &:nth-of-type(2) {
+        z-index: -1;
+        opacity: 0.15;
+    }
+    &:last-of-type {
+        z-index: -2;
+        opacity: 0.1;
+    }
+}
+
+/* ========== Links ========== */
+.links {
+    position: absolute;
+    width: 30%;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        color: var(--text-color);
+        padding: 0.07rem 0;
+        font-size: var(--normal-font-size);
+        display: inline-block;
+        font-weight: var(--font-medium);
+        text-transform: uppercase;
+        transition: 0.5s;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: hide 0.5s forwards ease;
+    }
+}
+
+/* ========== Animation start ========== */
+/* ========== Animation bg ========== */
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    & li {
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: var(--circles-color);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+
+        &:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+        &:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+        &:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+        &:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+        &:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+        &:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+        &:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+        &:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+        &:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+        &:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+    }
+}
+
 .container.active {
     .bar {
         transform: rotate(360deg);
@@ -327,13 +429,19 @@
     .main {
         cursor: pointer;
         transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+
+        .header {
+            &__item {
+                display: block;
+            }
+        }
     }
 
-    .shadow.one {
+    .shadow:nth-of-type(2) {
         transform: perspective(1300) rotateY(20deg) translateZ(215px) scale(0.5);
     }
 
-    .shadow.two {
+    .shadow:last-of-type {
         transform: perspective(1300) rotateY(20deg) translateZ(120px) scale(0.5);
     }
 
@@ -342,10 +450,28 @@
     }
 }
 
+/*========== Rotating text ==========*/
 .word {
     position: absolute;
     left: 50%;
-    opacity: 0; 
+    opacity: 0;
+
+    /*========== Color for rotating text ==========*/
+    &.wisteria {
+        color: var(--wisteria-color);
+    }
+    &.belize {
+        color: var(--belize-color);
+    }
+    &.pomegranate {
+        color: var(--pomegranate-color);
+    }
+    &.green {
+        color: var(--green-color);
+    }
+    &.midnight {
+        color: var(--midnight-color);
+    }
 
     .letter {
         display: inline-block;
@@ -392,13 +518,13 @@
 }
 
 @keyframes animate {
-    0%{
+    0% {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
         border-radius: 0;
     }
 
-    100%{
+    100% {
         transform: translateY(-1000px) rotate(720deg);
         opacity: 0;
         border-radius: 50%;
@@ -406,24 +532,24 @@
 }
 
 @-webkit-keyframes pulse {
-    0%{
-        box-shadow: 0 0 0 0 transparentize(#ffffff, .6)
+    0% {
+        box-shadow: 0 0 0 0 transparentize(#ffffff, 0.6);
     }
-    
-    70%{  
-            box-shadow: 0 0 0 15px transparentize(#ffffff, 1)
+
+    70% {
+        box-shadow: 0 0 0 15px transparentize(#ffffff, 1);
     }
-   
-    100%{
-        box-shadow: 0 0 0 0 transparentize(#ffffff, 1)  
+
+    100% {
+        box-shadow: 0 0 0 0 transparentize(#ffffff, 1);
     }
 }
-  
+/* ========== Animation end ========== */
 
-// Media
-
+/* ========== Media start ========== */
 @media screen and (max-width: 500px) {
     .word {
         left: 25%;
     }
 }
+/* ========== Media end ========== */

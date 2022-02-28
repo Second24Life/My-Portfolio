@@ -1,140 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fullpage 3d site</title>
-    <link rel="stylesheet" href="./css/main.css" />
-  </head>
-  <body>
-    <div class="container">
-      <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
 
-      <nav class="navbar">
-        <div class="menu">
-          <h3 class="logo">Maxim <span>Zarubitskiy</span></h3>
-          <div class="burger">
-            <div class="bar"></div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fullpage 3d site</title>
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body class="container">
+
+  <!-- ========== Animation bg ========== -->
+  <div>
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+
+  <!-- ========== Header ========== -->
+  <header>
+    <nav class="navbar">
+      <div class="menu">
+        <h3 class="logo">Maxim <span>Zarubitskiy</span></h3>
+        <div class="burger">
+          <div class="bar"></div>
         </div>
-      </nav>
+      </div>
+    </nav>
+  </header>
 
-      <div class="screen" id="Home">
-        <div class="main">
-          <header class="header__one">
-            <div class="header">
-              <div class="header__item">
-                <h1 class="title">Hi, I'm Max</h1>
-                <h3 class="title">Frontend developer</h3>
-                <div class="skills">
-                  <span class="word ">JavaScript (ES6+) </span>
-                  <span class="word ">HTML 5 </span>
-                  <span class="word ">CSS, SCSS </span>
-                  <span class="word ">ReactJS, NextJS</span>
-                  <span class="word ">Redux</span>
-                  <span class="word ">Redux-thunk</span>
-                  <span class="word ">Material UI</span>
-                  <span class="word ">Ant Design</span>
-                  <span class="word ">Git</span>
-                </div>
-                <!-- <button class="btn">Read more</button> -->
-                <!-- <div class="social">
+  <!-- ========== Home ========== -->
+  <section class="screen home" id="home">
+    <div class="main home__container home-bg">
+      <div class="header">
+        <div class="header__item">
+          <h1 class="section__title">Hi, I'm Max</h1>
+          <h2 >Frontend developer</h3>
+            <div class="skills">
+              <span class="word ">JavaScript (ES6+) </span>
+              <span class="word ">HTML 5 </span>
+              <span class="word ">CSS, SCSS </span>
+              <span class="word ">ReactJS, NextJS</span>
+              <span class="word ">Redux</span>
+              <span class="word ">Redux-thunk</span>
+              <span class="word ">Material UI</span>
+              <span class="word ">Ant Design</span>
+              <span class="word ">Git</span>
+            </div>
+            <!-- <button class="btn">Read more</button> -->
+            <!-- <div class="social">
                   <ul>
                     <li></li>
                     <li></li>
                   </ul>
                 </div> -->
-              </div>
-            </div>
-          </header>
         </div>
-
-        <div class="shadow one"></div>
-        <div class="shadow two"></div>
-      </div>
-      <div class="screen" id="React-dialog">
-        <div class="main">
-          <header class="header__two">
-            <div class="header">
-              <div class="header__item">
-                <h2 class="title">React dialog</h2>
-              </div>
-            </div>
-          </header>
-        </div>
-
-        <div class="shadow one"></div>
-        <div class="shadow two"></div>
-      </div>
-      <div class="screen" id="Resume">
-        <div class="main">
-          <header class="header__tree">
-            <div class="header">
-              <div class="header__item">
-                <h2 class="title">Resume</h2>
-                
-              </div>
-            </div>
-          </header>
-        </div>
-
-        <div class="shadow one"></div>
-        <div class="shadow two"></div>
-      </div>
-      <div class="screen" id="React-pizza">
-        <div class="main">
-          <header class="header__four">
-            <div class="header">
-              <div class="header__item">
-                <h2 class="title">React pizza</h2>
-              </div>
-            </div>
-          </header>
-        </div>
-
-        <div class="shadow one"></div>
-        <div class="shadow two"></div>
-      </div>
-      <div class="screen" id="Website-restaurant">
-        <div class="main">
-          <header class="header__five">
-            <div class="header">
-              <div class="header__item">
-                <h2 class="title">Website restaurant </h2>
-              </div>
-            </div>
-          </header>
-        </div>
-
-        <div class="shadow one"></div>
-        <div class="shadow two"></div>
-      </div>
-
-      <div class="links">
-        <ul>
-          <li><a data-link="Home" class="link" href="#" style="--i: 0.1s">Home</a></li>
-          <li><a data-link="React-dialog" class="link" href="#" style="--i: 0.15s">React dialog</a></li>
-          <li><a data-link="Resume" class="link" href="#" style="--i: 0.2s">Resume</a></li>
-          <li>
-            <a data-link="React-pizza" class="link" href="#" style="--i: 0.25s">React pizza</a>
-          </li>
-          <li><a data-link="Website-restaurant" class="link" href="#" style="--i: 0.3s">Website restaurant</a></li>
-        </ul>
       </div>
     </div>
 
-    <script type="module" src="./js/index.js"></script>
-  </body>
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+  </section>
+
+  <!-- ========== React dialog ========== -->
+  <section class="screen react-dialog" id="react-dialog">
+    <div class="main react-dialog__container react-dialog-bg">
+      <div class="header">
+        <div class="header__item">
+          <h2 class="section__title">React dialog</h2>
+        </div>
+      </div>
+
+      <div class="react-dialog__content">
+        <div class="react-dialog__stack">
+          <ul>
+              <li>ReactJS + хуки</li>
+              <li>React Router</li>
+              <li>Redux</li>
+              <li>Redux thunk</li>
+              <li>json-server</li>
+              <li>Axios</li>
+              <li>classnames</li>
+          </ul>
+        </div>
+        <div class="react-dialog__data">
+          <h3 class="react-dialog__subtitle">Учебное приложение диалога</h3>
+          <p class="react-dialog__description">Учебное приложение диалога. Были изучены и закреплены хуки. Использовал PropTypes для указания типа данных. Затем приложение было переписано на typescript, но еще не было опубликовано. Добавил unit-тесты.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+  </section>
+
+  <!-- ========== Resume ========== -->
+  <section class="screen resume" id="resume">
+    <div class="main resume__container resume-bg">
+      <div class="header">
+        <div class="header__item">
+          <h2 class="section__title">Resume</h2>
+        </div>
+      </div>
+
+      <div class="resume__content">
+        <div class="resume__stack">
+          <ul>
+            <li>HTML</li>
+            <li>JavaScript</li>
+            <li>GULP</li>
+          </ul>
+        </div>
+        <div class="resume__data">
+          <h3 class="resume__subtitle">Мое резюме</h3>
+          <p class="resume__description">Сайт в виде моего резюме. Можно скачать резюме в формате pdf,и реализована возможность смены темы на темную.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+  </section>
+
+  <!-- ========== React pizza ========== -->
+  <section class="screen react-pizza" id="react-pizza">
+    <div class="main react-pizza-bg">
+      <div class="header">
+        <div class="header__item">
+          <h2 class="section__title">React pizza</h2>
+        </div>
+      </div>
+
+      <div class="react-pizza__container">
+        <div class="react-pizza__content">
+          <div class="react-pizza__stack">
+            <ul>
+              <li>ReactJS + хуки</li>
+              <li>React Router</li>
+              <li>Redux</li>
+              <li>Redux thunk</li>
+              <li>json-server</li>
+              <li>Axios</li>
+              <li>classnames</li>
+            </ul>
+          </div>
+          <div class="react-pizza__data">
+            <h3 class="react-pizza__subtitle">Интернет-магазин по заказу пиццы - React Pizza</h3>
+            <p class="react-pizza__description">
+              Интернет-магазин был создан в качестве учебного. Были изучены хуки, react router, redux, axios, способы оптимизации приложения. Точнее правильное применение хуков useMemo и useCallback.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+  </section>
+
+  <!-- ========== Website restaurant ========== -->
+  <section class="screen website-restaurant" id="website-restaurant">
+    <div class="main website-restaurant__container website-restaurant-bg">
+      <div class="header">
+        <div class="header__item">
+          <h2 class="section__title">Website restaurant</h2>
+        </div>
+      </div>
+
+      <div class="website-restaurant__content">
+        <div class="website-restaurant__stack">
+          <ul>
+            <li>HTML</li>
+            <li>SCSS</li>
+            <li>JavaScript</li>
+            <li>GULP</li>
+          </ul>
+        </div>
+        <div class="website-restaurant__data">
+          <h3 class="website-restaurant__subtitle">Сайт ресторана</h3>
+          <p class="website-restaurant__description">Простой Landing page для ресторана Tasty food. Реализована возможность смены темы на темную.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+  </section>
+
+  <!-- ========== KSIP ========== -->
+  <section class="screen ksip" id="ksip">
+    <div class="main ksip-bg">
+      <div class="header">
+        <div class="header__item">
+          <h2 class="section__title">KSIP</h2>
+        </div>
+      </div>
+      <div class="ksip__container">
+        <div class="ksip__content">
+          <div class="ksip__stack">
+            <ul>
+              <li>JavaScript</li>
+              <li>PHP</li>
+              <li>CMS 1C-Bitrix</li>
+              <li>Композитный сайт</li>
+            </ul>
+          </div>
+          <div class="ksip__data">
+            <h3 class="ksip__subtitle"><a href="https://ksip.ru/" target="_blank" rel="noopener noreferrer">Корпоративный сайт KSIP - Kaminsky, Stepanov and Partners.</a></h3>
+            <p class="ksip__description">Был разработан дизайн и согласно дизайну, был сверстан сайт. Затем подключил CMS 1C-Bitrix, создал компоненты согласно созданой верстве. А CMS была нужна для легкого редактирования всего, что есть на сайте. Еще был создан чат-бот согласно тз. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+  </section>
+
+  <!-- ========== Links ========== -->
+  <div class="links">
+    <ul>
+      <li><a data-link="home" class="link" href="#" style="--i: 0.1s">Home</a></li>
+      <li><a data-link="react-dialog" class="link" href="#" style="--i: 0.15s">React dialog</a></li>
+      <li><a data-link="resume" class="link" href="#" style="--i: 0.2s">Resume</a></li>
+      <li>
+        <a data-link="react-pizza" class="link" href="#" style="--i: 0.25s">React pizza</a>
+      </li>
+      <li><a data-link="website-restaurant" class="link" href="#" style="--i: 0.3s">Website restaurant</a></li>
+      <li><a data-link="ksip" class="link" href="#" style="--i: 0.3s">ksip</a></li>
+    </ul>
+  </div>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+
 </html>
