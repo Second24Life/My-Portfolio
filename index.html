@@ -5,8 +5,18 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fullpage 3d site</title>
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+  <!--========== BOX ICONS ==========-->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+  />
+
+  <!--========== CSS ==========-->
   <link rel="stylesheet" href="./css/main.css" />
+
+  <title>Maxim Zarubitskiy</title>
 </head>
 
 <body class="container">
@@ -42,29 +52,43 @@
 
   <!-- ========== Home ========== -->
   <section class="screen home" id="home">
-    <div class="main home__container home-bg">
+    <div class="main home-bg">
       <div class="header">
         <div class="header__item">
           <h1 class="section__title">Hi, I'm Max</h1>
-          <h2 >Frontend developer</h3>
-            <div class="skills">
-              <span class="word ">JavaScript (ES6+) </span>
-              <span class="word ">HTML 5 </span>
-              <span class="word ">CSS, SCSS </span>
-              <span class="word ">ReactJS, NextJS</span>
-              <span class="word ">Redux</span>
-              <span class="word ">Redux-thunk</span>
-              <span class="word ">Material UI</span>
-              <span class="word ">Ant Design</span>
-              <span class="word ">Git</span>
-            </div>
-            <!-- <button class="btn">Read more</button> -->
-            <!-- <div class="social">
-                  <ul>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </div> -->
+          <h2>Frontend developer</h3>
+          <div class="skills">
+            <span class="word ">JavaScript (ES6+) </span>
+            <span class="word ">HTML 5 </span>
+            <span class="word ">CSS, SCSS </span>
+            <span class="word ">ReactJS, NextJS</span>
+            <span class="word ">Redux</span>
+            <span class="word ">Redux-thunk</span>
+            <span class="word ">Material UI</span>
+            <span class="word ">Ant Design</span>
+            <span class="word ">Git</span>
+          </div>
+          <!-- <button class="btn">Read more</button> -->
+          <!-- <div class="social">
+                <ul>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div> -->
+        </div>
+      </div>
+      
+      <div class="home__container">
+        <div class="home__social">
+          <a href="https://github.com/Second24Life" target="_blank" class="social__link" style="--i: 0.1s">
+            <i class='bx bxl-github social__icon'></i> @Second24Life
+          </a>
+          <a href="https://www.instagram.com/second24life/" target="_blank" class="social__link" style="--i: 0.2s">
+            <i class="bx bxl-instagram social__icon"></i> @second24life
+          </a>
+          <a href="https://t.me/second24life" target="_blank" class="social__link" style="--i: 0.3s">
+            <i class='bx bxl-telegram social__icon' ></i></i> @second24life
+          </a>
         </div>
       </div>
     </div>
@@ -79,7 +103,8 @@
       <div class="header">
         <div class="header__item">
           <h2 class="section__title">
-            <a href="https://second24life.github.io/react-dialog-example/" target="_blank" rel="noopener noreferrer">React dialog</a>
+            <a href="https://second24life.github.io/react-dialog-example/" target="_blank"
+              rel="noopener noreferrer">React dialog</a>
           </h2>
         </div>
       </div>
@@ -88,18 +113,20 @@
         <div class="react-dialog__content">
           <div class="react-dialog__stack">
             <ul>
-                <li style="--i: 0.1s">ReactJS + хуки</li>
-                <li style="--i: 0.15s">React Router</li>
-                <li style="--i: 0.2s">Redux</li>
-                <li style="--i: 0.25s">Redux thunk</li>
-                <li style="--i: 0.3s">json-server</li>
-                <li style="--i: 0.35s">Axios</li>
-                <li style="--i: 0.4s">classnames</li>
+              <li style="--i: 0.1s">ReactJS + хуки</li>
+              <li style="--i: 0.15s">React Router</li>
+              <li style="--i: 0.2s">Redux</li>
+              <li style="--i: 0.25s">Redux thunk</li>
+              <li style="--i: 0.3s">json-server</li>
+              <li style="--i: 0.35s">Axios</li>
+              <li style="--i: 0.4s">classnames</li>
             </ul>
           </div>
           <div class="react-dialog__data">
             <h3 class="react-dialog__subtitle">Учебное приложение диалога</h3>
-            <p class="react-dialog__description">Учебное приложение диалога. Были изучены и закреплены хуки. Использовал PropTypes для указания типа данных. Затем приложение было переписано на typescript, но еще не было опубликовано. Добавил unit-тесты.
+            <p class="react-dialog__description">Учебное приложение диалога. Были изучены и закреплены хуки. Использовал
+              PropTypes для указания типа данных. Затем приложение было переписано на typescript, но еще не было
+              опубликовано. Добавил unit-тесты.
             </p>
           </div>
         </div>
@@ -120,7 +147,7 @@
           </h2>
         </div>
       </div>
-      
+
       <div class="resume__container">
         <div class="resume__content">
           <div class="resume__stack">
@@ -132,7 +159,8 @@
           </div>
           <div class="resume__data">
             <h3 class="resume__subtitle">Мое резюме</h3>
-            <p class="resume__description">Сайт в виде моего резюме. Можно скачать резюме в формате pdf,и реализована возможность смены темы на темную.</p>
+            <p class="resume__description">Сайт в виде моего резюме. Можно скачать резюме в формате pdf,и реализована
+              возможность смены темы на темную.</p>
           </div>
         </div>
       </div>
@@ -169,7 +197,10 @@
           <div class="react-pizza__data">
             <h3 class="react-pizza__subtitle">Интернет-магазин по заказу пиццы - React Pizza</h3>
             <p class="react-pizza__description">
-              Интернет-магазин был создан в качестве учебного. Были изучены хуки, react router, redux, axios, способы оптимизации приложения. Точнее правильное применение хуков useMemo и useCallback.
+              Интернет-магазин был создан в качестве учебного. Были изучены хуки, react router, redux, axios, способы
+              оптимизации приложения. Точнее правильное применение хуков useMemo и useCallback.
+              <br>
+              Приложение медленно запускается из-за бесплатного хостинга.
             </p>
           </div>
         </div>
@@ -186,7 +217,8 @@
       <div class="header">
         <div class="header__item">
           <h2 class="section__title">
-            <a href="https://second24life.github.io/website-restaurant/" target="_blank" rel="noopener noreferrer">Website restaurant</a>
+            <a href="https://second24life.github.io/website-restaurant/" target="_blank"
+              rel="noopener noreferrer">Website restaurant</a>
           </h2>
         </div>
       </div>
@@ -203,7 +235,8 @@
           </div>
           <div class="website-restaurant__data">
             <h3 class="website-restaurant__subtitle">Сайт ресторана</h3>
-            <p class="website-restaurant__description">Простой Landing page для ресторана Tasty food. Реализована возможность смены темы на темную.</p>
+            <p class="website-restaurant__description">Простой Landing page для ресторана Tasty food. Реализована
+              возможность смены темы на темную.</p>
           </div>
         </div>
       </div>
@@ -235,9 +268,12 @@
           </div>
           <div class="ksip__data">
             <h3 class="ksip__subtitle">
-              <a href="https://ksip.ru/" target="_blank" rel="noopener noreferrer">Корпоративный сайт KSIP - Kaminsky, Stepanov and Partners.</a>
+              <a href="https://ksip.ru/" target="_blank" rel="noopener noreferrer">Корпоративный сайт KSIP - Kaminsky,
+                Stepanov and Partners.</a>
             </h3>
-            <p class="ksip__description">Был разработан дизайн и согласно дизайну, был сверстан сайт. Затем подключил CMS 1C-Bitrix, создал компоненты согласно созданой верстве. А CMS была нужна для легкого редактирования всего, что есть на сайте. Еще был создан чат-бот согласно тз. </p>
+            <p class="ksip__description">Был разработан дизайн и согласно дизайну, был сверстан сайт. Затем подключил
+              CMS 1C-Bitrix, создал компоненты согласно созданой верстве. А CMS была нужна для легкого редактирования
+              всего, что есть на сайте. Еще был создан чат-бот согласно тз. </p>
           </div>
         </div>
       </div>

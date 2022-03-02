@@ -247,14 +247,13 @@ section:first-of-type {
         height: 100%;
         top: 0;
         left: 0;
-        background-color: rgba(43, 51, 59, 0.5);
+        background-color: rgba(43, 51, 59, 0.4);
         display: flex;
         justify-content: center;
         transition: 0.5s;
 
         &__item {
             // display: none;
-            max-width: 400px;
             text-align: center;
             padding: 0 var(--mb-4);
             transition: 0.5s;
@@ -275,6 +274,7 @@ section:first-of-type {
     }
 }
 
+.home,
 .react-dialog,
 .resume,
 .react-pizza,
@@ -304,7 +304,7 @@ section:first-of-type {
         display: flex;
         align-items: center;
         margin-right: var(--mb-4);
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.9);
         padding: var(--mb-3);
         border-radius: var(--mb-1);
         ul {
@@ -318,19 +318,36 @@ section:first-of-type {
 
     &__data {
         flex: 0 1 60%;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.9);
         padding: var(--mb-3);
         border-radius: var(--mb-1);
     }
 
     &__subtitle {
         text-align: center;
+        margin-bottom: var(--mb-1);
     }
 
     &__description {
     }
 }
 
+.home__container {
+    align-self: end;
+    justify-content: center;
+    margin-bottom: var(--mb-2);
+
+    .home__social {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            margin-bottom: 0.3rem;
+            opacity: 1;
+            animation: appear 0.5s forwards ease var(--i);
+        }
+    }
+}
 /* ========== Shadows ========== */
 .shadow {
     position: absolute;
@@ -496,7 +513,7 @@ section:first-of-type {
 
     .main {
         cursor: pointer;
-        transform: perspective(1300px) rotateY(20deg) translateZ(80px) scale(0.5);
+        transform: perspective(1300px) rotateY(20deg) translateZ(320px) scale(0.5);
 
         .header {
             &__item {
@@ -506,11 +523,11 @@ section:first-of-type {
     }
 
     .shadow:nth-of-type(2) {
-        transform: perspective(1300) rotateY(20deg) translateZ(50px) scale(0.5);
+        transform: perspective(1300) rotateY(20deg) translateZ(215px) scale(0.5);
     }
 
     .shadow:last-of-type {
-        transform: perspective(1300) rotateY(20deg) translateZ(20px) scale(0.5);
+        transform: perspective(1300) rotateY(20deg) translateZ(120px) scale(0.5);
     }
 
     .links a {
@@ -657,6 +674,20 @@ section:first-of-type {
             flex: 0 1 70%;
             padding: var(--mb-1);
             border-radius: var(--mb-1);
+        }
+    }
+
+    .container.active {
+        .main {
+            transform: perspective(1300px) rotateY(20deg) translateZ(80px) scale(0.5);
+        }
+
+        .shadow:nth-of-type(2) {
+            transform: perspective(1300) rotateY(20deg) translateZ(50px) scale(0.5);
+        }
+
+        .shadow:last-of-type {
+            transform: perspective(1300) rotateY(20deg) translateZ(20px) scale(0.5);
         }
     }
 }
