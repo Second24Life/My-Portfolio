@@ -31,6 +31,26 @@
     --small-font-size: 0.813rem;
     --smaller-font-size: 0.75rem;
 
+    @media screen and (max-width: 350px) {
+        --biggest-font-size: 1.6rem;
+        --h1-font-size: 0.938rem;
+        --h2-font-size: 0.8rem;
+        --h3-font-size: 0.76rem;
+        --normal-font-size: 0.7rem;
+        --small-font-size: 0.68rem;
+        --smaller-font-size: 0.64rem;
+    }
+
+    @media screen and (max-width: 450px) {
+        --biggest-font-size: 1.9rem;
+        --h1-font-size: 1.25rem;
+        --h2-font-size: 1rem;
+        --h3-font-size: 0.938rem;
+        --normal-font-size: 0.813rem;
+        --small-font-size: 0.75rem;
+        --smaller-font-size: 0.65rem;
+    }
+
     @media screen and (min-width: 768px) {
         --biggest-font-size: 4rem;
         --h1-font-size: 2.25rem;
@@ -52,6 +72,8 @@
     --mb-4: 2rem;
     --mb-5: 2.5rem;
     --mb-6: 3rem;
+    --mb-7: 3.5rem;
+    --mb-8: 4rem;
 
     /*========== z index ==========*/
     --z-tooltip: 10;
@@ -74,7 +96,6 @@ body {
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
-    // line-height: 1.6;
     .container {
         min-height: 100vh;
         width: 100%;
@@ -98,6 +119,7 @@ ul {
 }
 a {
     text-decoration: none;
+    color: var(--text-color);
 }
 img {
     max-width: 100%;
@@ -112,6 +134,7 @@ img {
     width: 100%;
     z-index: 10;
     height: 0.3rem;
+
     .menu {
         max-width: 72rem;
         width: 100%;
@@ -121,19 +144,21 @@ img {
         justify-content: space-between;
         align-items: center;
         color: white;
+
         .logo {
-            font-size: 1.1rem;
+            font-size: var(--h2-font-size);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            line-height: 4rem;
+            line-height: var(--mb-8);
+
             span {
                 font-weight: 300;
             }
         }
         .burger {
-            height: 4rem;
-            width: 3rem;
+            height: var(--mb-8);
+            width: var(--mb-6);
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -198,6 +223,7 @@ section:first-of-type {
     .main {
         .header__item {
             display: block;
+            height: initial;
         }
     }
 }
@@ -224,18 +250,26 @@ section:first-of-type {
         background-color: rgba(43, 51, 59, 0.5);
         display: flex;
         justify-content: center;
-        align-items: center;
         transition: 0.5s;
 
         &__item {
-            display: none;
-            max-width: 35rem;
+            // display: none;
+            max-width: 400px;
             text-align: center;
             padding: 0 var(--mb-4);
             transition: 0.5s;
+            height: 80%;
+            align-self: center;
+            transition: 0.5s;
+            transform: translateY(10%);
+            animation: shift-up 0.5s forwards ease;
 
             .skills {
                 font-size: var(--h1-font-size);
+
+                .word {
+                    max-width: 400px;
+                }
             }
         }
     }
@@ -252,6 +286,8 @@ section:first-of-type {
         margin-left: auto;
         margin-right: auto;
         display: flex;
+        opacity: 1;
+        animation: appear 0.5s forwards ease;
     }
 
     &__content {
@@ -265,14 +301,26 @@ section:first-of-type {
     }
 
     &__stack {
+        display: flex;
+        align-items: center;
         margin-right: var(--mb-4);
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: var(--mb-3);
+        border-radius: var(--mb-1);
         ul {
-            list-style: initial;
+            list-style: inside;
+            li {
+                opacity: 1;
+                animation: appear 0.5s forwards ease var(--i);
+            }
         }
     }
 
     &__data {
         flex: 0 1 60%;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: var(--mb-3);
+        border-radius: var(--mb-1);
     }
 
     &__subtitle {
@@ -429,33 +477,40 @@ section:first-of-type {
         }
     }
 
-    .main {
-        cursor: pointer;
-        transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
-
-        .header {
-            &__item {
-                display: block;
-            }
-        }
-    }
-
     .react-dialog,
     .resume,
     .react-pizza,
     .website-restaurant,
     .ksip {
         &__container {
-            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: hide 0.5s forwards ease;
+            li {
+                // opacity: 0;
+                transform: translateY(10px);
+                animation: hide 0.5s forwards ease;
+            }
+        }
+    }
+
+    .main {
+        cursor: pointer;
+        transform: perspective(1300px) rotateY(20deg) translateZ(80px) scale(0.5);
+
+        .header {
+            &__item {
+                animation: shift-down 0.5s forwards ease;
+            }
         }
     }
 
     .shadow:nth-of-type(2) {
-        transform: perspective(1300) rotateY(20deg) translateZ(215px) scale(0.5);
+        transform: perspective(1300) rotateY(20deg) translateZ(50px) scale(0.5);
     }
 
     .shadow:last-of-type {
-        transform: perspective(1300) rotateY(20deg) translateZ(120px) scale(0.5);
+        transform: perspective(1300) rotateY(20deg) translateZ(20px) scale(0.5);
     }
 
     .links a {
@@ -557,12 +612,52 @@ section:first-of-type {
         box-shadow: 0 0 0 0 transparentize(#ffffff, 1);
     }
 }
+
+@keyframes shift-up {
+    from {
+        transform: translateY(20%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes shift-down {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(20%);
+    }
+}
 /* ========== Animation end ========== */
 
 /* ========== Media start ========== */
 @media screen and (max-width: 500px) {
     .word {
         left: 25%;
+    }
+
+    .react-dialog,
+    .resume,
+    .react-pizza,
+    .website-restaurant,
+    .ksip {
+        &__content {
+            margin: 0;
+        }
+
+        &__stack {
+            margin-right: var(--mb-2);
+            padding: var(--mb-1);
+            flex: 1 1 40%;
+        }
+
+        &__data {
+            flex: 0 1 70%;
+            padding: var(--mb-1);
+            border-radius: var(--mb-1);
+        }
     }
 }
 /* ========== Media end ========== */

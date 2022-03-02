@@ -34,9 +34,35 @@
   --mb-4: 2rem;
   --mb-5: 2.5rem;
   --mb-6: 3rem;
+  --mb-7: 3.5rem;
+  --mb-8: 4rem;
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
+}
+
+@media screen and (max-width: 350px) {
+  :root {
+    --biggest-font-size: 1.6rem;
+    --h1-font-size: 0.938rem;
+    --h2-font-size: 0.8rem;
+    --h3-font-size: 0.76rem;
+    --normal-font-size: 0.7rem;
+    --small-font-size: 0.68rem;
+    --smaller-font-size: 0.64rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  :root {
+    --biggest-font-size: 1.9rem;
+    --h1-font-size: 1.25rem;
+    --h2-font-size: 1rem;
+    --h3-font-size: 0.938rem;
+    --normal-font-size: 0.813rem;
+    --small-font-size: 0.75rem;
+    --smaller-font-size: 0.65rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -97,6 +123,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--text-color);
 }
 
 img {
@@ -132,11 +159,11 @@ img {
 }
 
 .navbar .menu .logo {
-  font-size: 1.1rem;
+  font-size: var(--h2-font-size);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  line-height: 4rem;
+  line-height: var(--mb-8);
 }
 
 .navbar .menu .logo span {
@@ -144,8 +171,8 @@ img {
 }
 
 .navbar .menu .burger {
-  height: 4rem;
-  width: 3rem;
+  height: var(--mb-8);
+  width: var(--mb-6);
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -225,6 +252,7 @@ section .section__title {
 
 section:first-of-type .main .header__item {
   display: block;
+  height: initial;
 }
 
 .main {
@@ -261,24 +289,33 @@ section:first-of-type .main .header__item {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .main .header__item {
-  display: none;
-  max-width: 35rem;
+  max-width: 400px;
   text-align: center;
   padding: 0 var(--mb-4);
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  height: 80%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  transition: 0.5s;
+  -webkit-transform: translateY(10%);
+          transform: translateY(10%);
+  -webkit-animation: shift-up 0.5s forwards ease;
+          animation: shift-up 0.5s forwards ease;
 }
 
 .main .header__item .skills {
   font-size: var(--h1-font-size);
+}
+
+.main .header__item .skills .word {
+  max-width: 400px;
 }
 
 .react-dialog__container,
@@ -293,6 +330,9 @@ section:first-of-type .main .header__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 1;
+  -webkit-animation: appear 0.5s forwards ease;
+          animation: appear 0.5s forwards ease;
 }
 
 .react-dialog__content,
@@ -319,7 +359,16 @@ section:first-of-type .main .header__item {
 .react-pizza__stack,
 .website-restaurant__stack,
 .ksip__stack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: var(--mb-4);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: var(--mb-3);
+  border-radius: var(--mb-1);
 }
 
 .react-dialog__stack ul,
@@ -327,7 +376,17 @@ section:first-of-type .main .header__item {
 .react-pizza__stack ul,
 .website-restaurant__stack ul,
 .ksip__stack ul {
-  list-style: initial;
+  list-style: inside;
+}
+
+.react-dialog__stack ul li,
+.resume__stack ul li,
+.react-pizza__stack ul li,
+.website-restaurant__stack ul li,
+.ksip__stack ul li {
+  opacity: 1;
+  -webkit-animation: appear 0.5s forwards ease var(--i);
+          animation: appear 0.5s forwards ease var(--i);
 }
 
 .react-dialog__data,
@@ -338,6 +397,9 @@ section:first-of-type .main .header__item {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 60%;
           flex: 0 1 60%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: var(--mb-3);
+  border-radius: var(--mb-1);
 }
 
 .react-dialog__subtitle,
@@ -537,32 +599,48 @@ section:first-of-type .main .header__item {
           transform: translateY(0) rotate(-45deg);
 }
 
-.container.active .main {
-  cursor: pointer;
-  -webkit-transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
-          transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
-}
-
-.container.active .main .header__item {
-  display: block;
-}
-
 .container.active .react-dialog__container,
 .container.active .resume__container,
 .container.active .react-pizza__container,
 .container.active .website-restaurant__container,
 .container.active .ksip__container {
-  display: none;
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-animation: hide 0.5s forwards ease;
+          animation: hide 0.5s forwards ease;
+}
+
+.container.active .react-dialog__container li,
+.container.active .resume__container li,
+.container.active .react-pizza__container li,
+.container.active .website-restaurant__container li,
+.container.active .ksip__container li {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-animation: hide 0.5s forwards ease;
+          animation: hide 0.5s forwards ease;
+}
+
+.container.active .main {
+  cursor: pointer;
+  -webkit-transform: perspective(1300px) rotateY(20deg) translateZ(80px) scale(0.5);
+          transform: perspective(1300px) rotateY(20deg) translateZ(80px) scale(0.5);
+}
+
+.container.active .main .header__item {
+  -webkit-animation: shift-down 0.5s forwards ease;
+          animation: shift-down 0.5s forwards ease;
 }
 
 .container.active .shadow:nth-of-type(2) {
-  -webkit-transform: perspective(1300) rotateY(20deg) translateZ(215px) scale(0.5);
-          transform: perspective(1300) rotateY(20deg) translateZ(215px) scale(0.5);
+  -webkit-transform: perspective(1300) rotateY(20deg) translateZ(50px) scale(0.5);
+          transform: perspective(1300) rotateY(20deg) translateZ(50px) scale(0.5);
 }
 
 .container.active .shadow:last-of-type {
-  -webkit-transform: perspective(1300) rotateY(20deg) translateZ(120px) scale(0.5);
-          transform: perspective(1300) rotateY(20deg) translateZ(120px) scale(0.5);
+  -webkit-transform: perspective(1300) rotateY(20deg) translateZ(20px) scale(0.5);
+          transform: perspective(1300) rotateY(20deg) translateZ(20px) scale(0.5);
 }
 
 .container.active .links a {
@@ -728,11 +806,84 @@ section:first-of-type .main .header__item {
   }
 }
 
+@-webkit-keyframes shift-up {
+  from {
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes shift-up {
+  from {
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes shift-down {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+  }
+}
+
+@keyframes shift-down {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+  }
+}
+
 /* ========== Animation end ========== */
 /* ========== Media start ========== */
 @media screen and (max-width: 500px) {
   .word {
     left: 25%;
+  }
+  .react-dialog__content,
+  .resume__content,
+  .react-pizza__content,
+  .website-restaurant__content,
+  .ksip__content {
+    margin: 0;
+  }
+  .react-dialog__stack,
+  .resume__stack,
+  .react-pizza__stack,
+  .website-restaurant__stack,
+  .ksip__stack {
+    margin-right: var(--mb-2);
+    padding: var(--mb-1);
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 40%;
+            flex: 1 1 40%;
+  }
+  .react-dialog__data,
+  .resume__data,
+  .react-pizza__data,
+  .website-restaurant__data,
+  .ksip__data {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 70%;
+            flex: 0 1 70%;
+    padding: var(--mb-1);
+    border-radius: var(--mb-1);
   }
 }
 
