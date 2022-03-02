@@ -229,6 +229,12 @@ section:first-of-type .main .header__item {
 
 .main {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   left: 0;
   z-index: 5;
@@ -287,9 +293,6 @@ section:first-of-type .main .header__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .react-dialog__content,
@@ -317,7 +320,14 @@ section:first-of-type .main .header__item {
 .website-restaurant__stack,
 .ksip__stack {
   margin-right: var(--mb-4);
-  list-style: circle;
+}
+
+.react-dialog__stack ul,
+.resume__stack ul,
+.react-pizza__stack ul,
+.website-restaurant__stack ul,
+.ksip__stack ul {
+  list-style: initial;
 }
 
 .react-dialog__data,
@@ -325,7 +335,9 @@ section:first-of-type .main .header__item {
 .react-pizza__data,
 .website-restaurant__data,
 .ksip__data {
-  width: 300px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
 }
 
 .react-dialog__subtitle,
@@ -533,6 +545,14 @@ section:first-of-type .main .header__item {
 
 .container.active .main .header__item {
   display: block;
+}
+
+.container.active .react-dialog__container,
+.container.active .resume__container,
+.container.active .react-pizza__container,
+.container.active .website-restaurant__container,
+.container.active .ksip__container {
+  display: none;
 }
 
 .container.active .shadow:nth-of-type(2) {

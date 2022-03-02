@@ -204,6 +204,8 @@ section:first-of-type {
 
 .main {
     position: relative;
+    display: flex;
+    align-items: center;
     width: 100%;
     left: 0;
     z-index: 5;
@@ -250,7 +252,6 @@ section:first-of-type {
         margin-left: auto;
         margin-right: auto;
         display: flex;
-        align-items: center;
     }
 
     &__content {
@@ -265,11 +266,13 @@ section:first-of-type {
 
     &__stack {
         margin-right: var(--mb-4);
-        list-style: circle;
+        ul {
+            list-style: initial;
+        }
     }
 
     &__data {
-        width: 300px;
+        flex: 0 1 60%;
     }
 
     &__subtitle {
@@ -434,6 +437,16 @@ section:first-of-type {
             &__item {
                 display: block;
             }
+        }
+    }
+
+    .react-dialog,
+    .resume,
+    .react-pizza,
+    .website-restaurant,
+    .ksip {
+        &__container {
+            display: none;
         }
     }
 
