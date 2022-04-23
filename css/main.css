@@ -226,6 +226,14 @@ section .home-bg {
   background: url(../img/home.jpg) no-repeat top center/cover;
 }
 
+section .edleed-bg {
+  background: url(../img/edleed.png) no-repeat top center/cover;
+}
+
+section .gamebitcoin-bg {
+  background: url(../img/bitcoin-roulette.png) no-repeat top center/cover;
+}
+
 section .react-dialog-bg {
   background: url(../img/react-dialog.jpg) no-repeat top center/cover;
 }
@@ -315,9 +323,12 @@ section:first-of-type .main .header__item {
 
 .main .header__item .skills .word {
   max-width: 400px;
+  min-width: 250px;
 }
 
 .home__container,
+.edleed__container,
+.gamebitcoin__container,
 .react-dialog__container,
 .resume__container,
 .react-pizza__container,
@@ -336,6 +347,8 @@ section:first-of-type .main .header__item {
 }
 
 .home__content,
+.edleed__content,
+.gamebitcoin__content,
 .react-dialog__content,
 .resume__content,
 .react-pizza__content,
@@ -356,6 +369,8 @@ section:first-of-type .main .header__item {
 }
 
 .home__stack,
+.edleed__stack,
+.gamebitcoin__stack,
 .react-dialog__stack,
 .resume__stack,
 .react-pizza__stack,
@@ -374,6 +389,8 @@ section:first-of-type .main .header__item {
 }
 
 .home__stack ul,
+.edleed__stack ul,
+.gamebitcoin__stack ul,
 .react-dialog__stack ul,
 .resume__stack ul,
 .react-pizza__stack ul,
@@ -383,6 +400,8 @@ section:first-of-type .main .header__item {
 }
 
 .home__stack ul li,
+.edleed__stack ul li,
+.gamebitcoin__stack ul li,
 .react-dialog__stack ul li,
 .resume__stack ul li,
 .react-pizza__stack ul li,
@@ -394,6 +413,8 @@ section:first-of-type .main .header__item {
 }
 
 .home__data,
+.edleed__data,
+.gamebitcoin__data,
 .react-dialog__data,
 .resume__data,
 .react-pizza__data,
@@ -408,6 +429,8 @@ section:first-of-type .main .header__item {
 }
 
 .home__subtitle,
+.edleed__subtitle,
+.gamebitcoin__subtitle,
 .react-dialog__subtitle,
 .resume__subtitle,
 .react-pizza__subtitle,
@@ -419,8 +442,7 @@ section:first-of-type .main .header__item {
 
 .home__container {
   -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+      align-self: flex-end;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -633,6 +655,8 @@ section:first-of-type .main .header__item {
           transform: translateY(0) rotate(-45deg);
 }
 
+.container.active .edleed__container,
+.container.active .gamebitcoin__container,
 .container.active .react-dialog__container,
 .container.active .resume__container,
 .container.active .react-pizza__container,
@@ -645,6 +669,8 @@ section:first-of-type .main .header__item {
           animation: hide 0.5s forwards ease;
 }
 
+.container.active .edleed__container li,
+.container.active .gamebitcoin__container li,
 .container.active .react-dialog__container li,
 .container.active .resume__container li,
 .container.active .react-pizza__container li,
@@ -890,6 +916,8 @@ section:first-of-type .main .header__item {
   .word {
     left: 25%;
   }
+  .edleed__content,
+  .gamebitcoin__content,
   .react-dialog__content,
   .resume__content,
   .react-pizza__content,
@@ -897,6 +925,8 @@ section:first-of-type .main .header__item {
   .ksip__content {
     margin: 0;
   }
+  .edleed__stack,
+  .gamebitcoin__stack,
   .react-dialog__stack,
   .resume__stack,
   .react-pizza__stack,
@@ -908,6 +938,8 @@ section:first-of-type .main .header__item {
         -ms-flex: 1 1 40%;
             flex: 1 1 40%;
   }
+  .edleed__data,
+  .gamebitcoin__data,
   .react-dialog__data,
   .resume__data,
   .react-pizza__data,
