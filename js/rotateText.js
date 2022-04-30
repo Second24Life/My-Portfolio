@@ -14,9 +14,9 @@ export function changeWord() {
     animateLetterOut(cw, i);
   }
 
+  nw[0].parentElement.style.opacity = 1;
   for (var i = 0; i < nw.length; i++) {
     nw[i].className = 'letter behind';
-    nw[0].parentElement.style.opacity = 1;
     animateLetterIn(nw, i);
   }
 
