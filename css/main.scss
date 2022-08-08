@@ -221,7 +221,7 @@ section {
             background: #fea039;
             border-radius: 50%;
 
-            @for $i from 1 through 50 {
+            @for $i from 1 through 75 {
                 &-#{$i} {
                     transform-origin: (random(30)-15) + px (random(30)-15) + px;
                     animation: rotating (random(20) + 10) + s ease-in-out (random(100) / -10) + s infinite;
