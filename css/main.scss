@@ -194,6 +194,14 @@ img {
 
 /*========== Section ==========*/
 section {
+    &.screen {
+        display: none;
+    }
+
+    &.screen.home {
+        display: block;
+    }
+
     /*========== Background sections ==========*/
     .home-bg-dots__container {
         position: absolute;
@@ -211,6 +219,7 @@ section {
                     top: random(100) * 1%;
                     left: random(100) * 1%;
                     animation: flying (random(50) + 20) + s ease-in-out (random(100) / -10) + s infinite alternate;
+                    z-index: random(10) - 5;
                 }
             }
         }
@@ -225,6 +234,7 @@ section {
                 &-#{$i} {
                     transform-origin: (random(30)-15) + px (random(30)-15) + px;
                     animation: rotating (random(20) + 10) + s ease-in-out (random(100) / -10) + s infinite;
+                    z-index: random(10) - 5;
                 }
             }
         }
@@ -234,6 +244,12 @@ section {
     }
     .gamebitcoin-bg {
         background: url(../img/bitcoin-roulette.png) no-repeat top center/cover;
+    }
+    .oxwe-bg {
+        background: url(../img/oxwe.jpg) no-repeat top center/cover;
+    }
+    .cutube-bg {
+        background: url(../img/cutube.jpg) no-repeat top center/cover;
     }
     .react-dialog-bg {
         background: url(../img/react-dialog.jpg) no-repeat top center/cover;
@@ -319,6 +335,8 @@ section:first-of-type {
 .home,
 .edleed,
 .gamebitcoin,
+.oxwe,
+.cutube,
 .react-dialog,
 .resume,
 .react-pizza,
@@ -526,6 +544,12 @@ section:first-of-type {
     }
 }
 
+.container {
+    .location__wrapper {
+        animation: shift-left 2s ease-in-out;
+    }
+}
+
 .container.active {
     .bar {
         transform: rotate(360deg);
@@ -540,6 +564,8 @@ section:first-of-type {
 
     .edleed,
     .gamebitcoin,
+    .oxwe,
+    .cutube,
     .react-dialog,
     .resume,
     .react-pizza,
@@ -633,14 +659,14 @@ section:first-of-type {
     }
     to {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(30px);
     }
 }
 
 @keyframes appear {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -691,6 +717,17 @@ section:first-of-type {
     }
     to {
         transform: translateY(20%);
+    }
+}
+
+@keyframes shift-left {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
     }
 }
 
@@ -757,6 +794,8 @@ section:first-of-type {
 
     .edleed,
     .gamebitcoin,
+    .oxwe,
+    .cutube,
     .react-dialog,
     .resume,
     .react-pizza,

@@ -1,45 +1,15 @@
+import { changeBg }from './changeBackgroundSection.js';
 import { changeWord } from "./rotateText.js";
-
-const burger = document.querySelector('.burger');
-const container = document.querySelector('.container');
-const screens = document.querySelectorAll('.screen');
-
-burger.addEventListener('click', () => {
-    container.classList.toggle('active');
-})
-
-function replaceBg(id) {
-    const bg = document.getElementById(id);
-
-    screens.forEach(screen => {
-        screen.style.display = 'none';
-    });
-    bg.style.display = 'block';
-}
-
-function changeBg() {
-    const links = document.querySelectorAll('.link');
-
-    links.forEach((link, index) => {
-        link.addEventListener('mouseenter', e => {
-            e.preventDefault();
-            replaceBg(e.target.dataset.link);
-        })
-
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            container.classList.toggle('active');
-        })
-    })
-
-    screens.forEach(screen => {
-        screen.style.display = 'none';
-        screens[0].style.display = 'block';
-    })
-}
+import { init, animate } from './planeta.js';
 
 
+// Add eventlistener for background
 changeBg();
 
+// Start animation change word
 changeWord();
 setInterval(changeWord, 4000);
+
+// Start animation earth
+init();
+animate();
