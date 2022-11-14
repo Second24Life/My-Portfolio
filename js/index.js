@@ -1,6 +1,6 @@
 import { changeBg }from './changeBackgroundSection.js';
 import { changeWord } from "./rotateText.js";
-import { init, animate } from './planeta.js';
+// import { init, animate } from './planeta.js';
 
 
 // Add eventlistener for background
@@ -11,5 +11,5 @@ changeWord();
 setInterval(changeWord, 4000);
 
 // Start animation earth
-init();
-animate();
+// init();
+// animate();
